@@ -287,7 +287,7 @@ abstract class BaseDraw
         }
 
         $Alpha = $this->convertAlpha($Alpha);
-        return imagecolorallocatealpha($Picture, $R, $G, $B, $Alpha);
+        return imagecolorallocatealpha($Picture, (int)$R, (int)$G, (int)$B, (int)$Alpha);
     }
 
     /**
@@ -509,7 +509,7 @@ abstract class BaseDraw
             return 0;
         }
         if (floor($Value2) != 0) {
-            return $Value1 % $Value2;
+            return floor($Value1) % floor($Value2);
         }
 
         $MinValue = min($Value1, $Value2);
@@ -518,7 +518,7 @@ abstract class BaseDraw
             $Factor = $Factor * 10;
         }
 
-        return ($Value1 * $Factor) % ($Value2 * $Factor);
+        return floor($Value1 * $Factor) % floor($Value2 * $Factor);
     }
 
     /**

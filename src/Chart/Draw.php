@@ -1300,16 +1300,16 @@ abstract class Draw extends BaseDraw
                 $this->Picture,
                 $FontSize,
                 $Angle,
-                $X + $this->ShadowX,
-                $Y + $this->ShadowY,
-                $C_ShadowColor,
+                (int)($X + $this->ShadowX),
+                (int)($Y + $this->ShadowY),
+                (int)$C_ShadowColor,
                 $FontName,
                 $Text
             );
         }
 
         $C_TextColor = $this->AllocateColor($this->Picture, $R, $G, $B, $Alpha);
-        imagettftext($this->Picture, $FontSize, $Angle, $X, $Y, $C_TextColor, $FontName, $Text);
+        imagettftext($this->Picture, $FontSize, $Angle, (int)$X, (int)$Y, (int)$C_TextColor, $FontName, $Text);
 
         $this->Shadow = $Shadow;
 

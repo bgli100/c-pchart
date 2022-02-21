@@ -285,7 +285,7 @@ abstract class BaseDraw
         }
 
         $Alpha = $this->convertAlpha($Alpha);
-        return imagecolorallocatealpha($Picture, $R, $G, $B, $Alpha);
+        return imagecolorallocatealpha($Picture, ()$R, $G, $B, $Alpha);
     }
 
     /**

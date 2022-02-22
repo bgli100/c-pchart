@@ -326,7 +326,7 @@ abstract class Draw extends BaseDraw
             if ($X2Dec != 0) {
                 $X2 = floor($X2) - 1;
             }
-            imageline($this->Picture, $X1, $Yp, $X2, $Yp, $ManualColor);
+            imageline($this->Picture, (int)$X1, (int)$Yp, (int)$X2, (int)$Yp, (int)$ManualColor);
         }
         $this->drawFilledRectangle($X1, $MinY + 1, floor($X2), $MaxY - 1, $Color);
 

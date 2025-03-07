@@ -844,7 +844,7 @@ abstract class BaseDraw
      * @param int|float $Surrounding
      * @return array
      */
-    public function validatePalette($Colors, int|float|null $Surrounding)
+    public function validatePalette($Colors, int|float|null $Surrounding = null)
     {
         $Result = [];
 
@@ -995,7 +995,7 @@ abstract class BaseDraw
      * @param string|null $Unit
      * @return string
      */
-    public function scaleFormat($Value, int|null $Mode, array|null $Format, string|null $Unit)
+    public function scaleFormat($Value, int|null $Mode = null, array|null $Format = null, string|null $Unit = null)
     {
         if ($Value == VOID) {
             return "";
@@ -1075,7 +1075,7 @@ abstract class BaseDraw
      * @param int $Type
      * @param array|null $Format
      */
-    public function writeBounds($Type = BOUND_BOTH, array|null $Format)
+    public function writeBounds($Type = BOUND_BOTH, array|null $Format = null)
     {
         $MaxLabelTxt = isset($Format["MaxLabelTxt"]) ? $Format["MaxLabelTxt"] : "max=";
         $MinLabelTxt = isset($Format["MinLabelTxt"]) ? $Format["MinLabelTxt"] : "min=";

@@ -27,7 +27,7 @@ class Image extends Draw
     public function __construct(
         $XSize,
         $YSize,
-        Data|null $DataSet,
+        Data|null $DataSet = null,
         $TransparentBackground = false
     ) {
         parent::__construct();
@@ -377,9 +377,9 @@ class Image extends Draw
     public function addToImageMap(
         $Type,
         $Plots,
-        string|null $Color,
-        string|null $Title,
-        string|null $Message,
+        string|null $Color = null,
+        string|null $Title = null,
+        string|null $Message = null,
         $HTMLEncode = false
     ) {
         if ($this->ImageMapStorageMode == null) {

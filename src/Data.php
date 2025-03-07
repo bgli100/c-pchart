@@ -271,7 +271,7 @@ class Data
      * @param mixed $Series
      * @param mixed $Picture
      */
-    public function setSeriePicture($Series, $Picture)
+    public function setSeriePicture($Series, mixed $Picture = null)
     {
         if (!is_array($Series)) {
             $Series = $this->convertToArray($Series);
@@ -297,7 +297,7 @@ class Data
      * @param int $Mode
      * @param array|null $Format
      */
-    public function setXAxisDisplay($Mode, array|null $Format)
+    public function setXAxisDisplay($Mode, array|null $Format = null)
     {
         $this->Data["XAxisDisplay"] = $Mode;
         $this->Data["XAxisFormat"] = $Format;
@@ -385,7 +385,7 @@ class Data
      * @param int $ID
      * @param mixed $Picture
      */
-    public function setScatterSeriePicture($ID, $Picture)
+    public function setScatterSeriePicture($ID, mixed $Picture = null)
     {
         if (isset($this->Data["ScatterSeries"][$ID])) {
             $this->Data["ScatterSeries"][$ID]["Picture"] = $Picture;
@@ -669,7 +669,7 @@ class Data
      * @param int $Mode
      * @param array|null $Format
      */
-    public function setAxisDisplay($AxisID, $Mode = AXIS_FORMAT_DEFAULT, array|null $Format)
+    public function setAxisDisplay($AxisID, $Mode = AXIS_FORMAT_DEFAULT, array|null $Format = null)
     {
         if (isset($this->Data["Axis"][$AxisID])) {
             $this->Data["Axis"][$AxisID]["Display"] = $Mode;
@@ -1004,7 +1004,7 @@ class Data
      * @param mixed $UnitChange
      * @param int $Round
      */
-    public function normalize($NormalizationFactor = 100, $UnitChange, $Round = 1)
+    public function normalize($NormalizationFactor = 100, mixed $UnitChange = null, $Round = 1)
     {
         $Abscissa = $this->Data["Abscissa"];
 

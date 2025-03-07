@@ -21,13 +21,13 @@ class Image extends Draw
     /**
      * @param int $XSize
      * @param int $YSize
-     * @param Data $DataSet
+     * @param Data|null $DataSet
      * @param boolean $TransparentBackground
      */
     public function __construct(
         $XSize,
         $YSize,
-        Data $DataSet = null,
+        Data|null $DataSet,
         $TransparentBackground = false
     ) {
         parent::__construct();
@@ -377,9 +377,9 @@ class Image extends Draw
     public function addToImageMap(
         $Type,
         $Plots,
-        $Color = null,
-        $Title = null,
-        $Message = null,
+        string|null $Color,
+        string|null $Title,
+        string|null $Message,
         $HTMLEncode = false
     ) {
         if ($this->ImageMapStorageMode == null) {

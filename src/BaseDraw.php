@@ -844,7 +844,7 @@ abstract class BaseDraw
      * @param int|float $Surrounding
      * @return array
      */
-    public function validatePalette($Colors, $Surrounding = null)
+    public function validatePalette($Colors, int|float|null $Surrounding)
     {
         $Result = [];
 
@@ -990,12 +990,12 @@ abstract class BaseDraw
     /**
      * Format the axis values
      * @param mixed $Value
-     * @param int $Mode
-     * @param array $Format
-     * @param string $Unit
+     * @param int|null $Mode
+     * @param array|null $Format
+     * @param string|null $Unit
      * @return string
      */
-    public function scaleFormat($Value, $Mode = null, $Format = null, $Unit = null)
+    public function scaleFormat($Value, int|null $Mode, array|null $Format, string|null $Unit)
     {
         if ($Value == VOID) {
             return "";
@@ -1073,9 +1073,9 @@ abstract class BaseDraw
     /**
      * Write Max value on a chart
      * @param int $Type
-     * @param array $Format
+     * @param array|null $Format
      */
-    public function writeBounds($Type = BOUND_BOTH, $Format = null)
+    public function writeBounds($Type = BOUND_BOTH, array|null $Format)
     {
         $MaxLabelTxt = isset($Format["MaxLabelTxt"]) ? $Format["MaxLabelTxt"] : "max=";
         $MinLabelTxt = isset($Format["MinLabelTxt"]) ? $Format["MinLabelTxt"] : "min=";

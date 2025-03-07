@@ -866,9 +866,9 @@ class Scatter
 
     /**
      * Draw a scatter plot chart
-     * @param array $Format
+     * @param array|null $Format
      */
-    public function drawScatterPlotChart($Format = null)
+    public function drawScatterPlotChart(array|null $Format)
     {
         $PlotSize = isset($Format["PlotSize"]) ? $Format["PlotSize"] : 3;
         $PlotBorder = isset($Format["PlotBorder"]) ? $Format["PlotBorder"] : false;
@@ -1002,9 +1002,9 @@ class Scatter
 
     /**
      * Draw a scatter line chart
-     * @param array $Format
+     * @param array|null $Format
      */
-    public function drawScatterLineChart($Format = null)
+    public function drawScatterLineChart(array|null $Format)
     {
         $Data = $this->pDataObject->getData();
         $RecordImageMap = isset($Format["RecordImageMap"]) ? $Format["RecordImageMap"] : false;
